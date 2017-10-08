@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   
+  # get 'tasks/:id/edit', to: 'tasks#edit'
+  
   resources :users, only: [:index, :show, :new, :create]
   
+  resources :tasks, only: [:create, :destroy, :show, :edit, :update]
+  
+
   #以下もとのコードをいったんコメントアウト
   #get 'toppages/index'
   # root to: 'tasks#index'
